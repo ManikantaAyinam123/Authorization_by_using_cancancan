@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f8f9fa; 
+    }
+    header {
+  background-color:black;
+  padding: 10px 20px; 
+  margin-bottom:50px
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+.brand {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0; 
+  padding: 0; 
+}
+.nav-list li {
+  margin-right: 20px;
+}
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+.nav-list a:hover {
+  color: #ffc107; 
+}
+  .container {
+      # max-width: 600px; 
+      # margin: 50px auto;
+      # padding: 20px;
+      # background-color: #fff;
+      # box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center; 
+     
+    }
+   h1 {
+      color: #007BFF;
+    }
+
+    h4 {
+      color: #495057;
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      display: flex;
+      
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 0 10px; 
+      background-color: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .btn:hover {
+      background-color: #0056b3; 
+    }
+    footer {
+     color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  </style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+  <a href="#" class="brand">Student ERP</a>
+  <ul class="nav-list">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+</header>
+<div class="container">
+  <h1><%= @student.name %></h1>
+  <h4>"<%= @student.branch %>"</h4>
+  
+  <div class="btn-container">
+    <%= button_to 'Remove', @student, method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn' %>
+    <%= button_to 'Back to Home', students_path, method: :get, class: 'btn' %>
+  </div>
+</div>
+<footer style="padding: 5px; background-color: #343a40; color: #fff; text-align: center;">
+<div>
+  <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+  <p>Address: 456 Oak Street, Townsville</p>
+  <p>Email: contact@example.com | Phone: (555) 987-6543</p>
+</div>
+<div style="margin-top: 20px;">
+  <p>Follow us on:</p>
+  <a href="#" style="color: #fff; margin-right: 10px;">Facebook</a>
+  <a href="#" style="color: #fff; margin-right: 10px;">Twitter</a>
+  <a href="#" style="color: #fff;">Instagram</a>
+</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      background-color: #2c3e50;
+    }
+
+    .card-container {
+      background-color: white;
+      border-radius: 10px;
+      margin top:20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 50px 70px 50px 70px;
+      
+    }
+
+    .container {
+      text-align: center;
+      margin-top:20px;
+    }
+
+    .signin-container {
+      margin-top: 20px;
+    }
+
+    .signin-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .signin-button:hover {
+      background-color: #2980b9;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="container">
+    <% if user_signed_in? %>
+      <script>
+        window.location.href = '<%= students_path %>';
+      </script>
+    <% else %>
+      <div class="signin-container">
+        <h1>Please Sign in<h1>
+        <%= button_to "Sign in", new_user_session_path, class: 'signin-button' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+</body>
+</html>

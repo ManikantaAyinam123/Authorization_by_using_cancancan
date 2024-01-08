@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Student Details</title>
+  <style>
+    html, body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: black;
+      padding: 10px 20px;
+      margin-bottom: 50px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list li {
+      margin-right: 20px;
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .nav-list a:hover {
+      color: #ffc107;
+    }
+
+    .container {
+      # max-width: 600px;
+      # margin: 50px auto;
+      # padding: 20px;
+      # background-color: #fff;
+      # box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #007BFF;
+    }
+
+    form {
+      max-width: 40%;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+
+    label {
+      display: block;
+      float: left;
+      display: flex;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" class="brand">Student ERP</a>
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <%= form_with model: @student do |form| %>
+      <h2>Update Student Details</h2>
+
+      <label for="name">Name</label>
+      <%= form.text_field :name, placeholder: "Name" %>
+
+      <label for="branch">Branch</label>
+      <%= form.text_field :branch, placeholder: "Branch" %>
+
+      <%= form.submit %>
+    <% end %>
+  </div>
+
+  <footer style="padding: 5px; background-color: #343a40; color: #fff; text-align: center;">
+    <div>
+      <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+      <p>Address: 456 Oak Street, Townsville</p>
+      <p>Email: contact@example.com | Phone: (555) 987-6543</p>
+    </div>
+    <div style="margin-top: 20px;">
+      <p>Follow us on:</p>
+      <a href="#" style="color: #fff; margin-right: 10px;">Facebook</a>
+      <a href="#" style="color: #fff; margin-right: 10px;">Twitter</a>
+      <a href="#" style="color: #fff;">Instagram</a>
+    </div>
+  </footer>
+</body>
+</html>
